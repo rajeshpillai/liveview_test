@@ -16,7 +16,7 @@ defmodule Social.Timeline.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:name, :content, :user_id])
+    |> cast(attrs, [:name, :content, :user_id, :post_id])
     |> validate_required([:name, :content])
   end
 end

@@ -28,7 +28,7 @@ defmodule Social.Timeline do
       order_by: [desc: p.id]
     )
     |> Repo.all()
-    |> Repo.preload([:user, :likes])
+    |> Repo.preload([:user, :likes, :comments])
   end
 
   @doc """
@@ -68,7 +68,7 @@ defmodule Social.Timeline do
       order_by: [desc: p.id]
     )
     |> Repo.all()
-    |> Repo.preload([:user, :likes])
+    |> Repo.preload([:user, :likes, :comments])
   end
 
   @doc """
@@ -85,7 +85,9 @@ defmodule Social.Timeline do
       ** (Ecto.NoResultsError)
 
   """
-  def get_post!(id), do: Post |> Repo.get!(id) |> Repo.preload([:user, :likes])
+  def get_post!(id), do: Post |> Repo.get!(id) |> Repo.preload([:user, :likes, :comments])
+
+  # def get_post!(id), do: Repo.get!(Post, id) |> Repo.preload(:user) |> Repo.preload(:comments) |> Repo.preload(:likes)
 
   @doc """
   Creates a post.
@@ -108,7 +110,7 @@ defmodule Social.Timeline do
   end
 
   defp preload_timeline_data({:error, _} = error), do: error
-  defp preload_timeline_data({:ok, post}), do: {:ok, Repo.preload(post, [:user, :likes])}
+  defp preload_timeline_data({:ok, post}), do: {:ok, Repo.preload(post, [:user, :likes, :comments])}
 
   @doc """
   Likes a post.
