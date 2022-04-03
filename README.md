@@ -37,12 +37,6 @@ Now you can visit Social at [`localhost:4000`](http://localhost:4000).
 - `20-testing-uploads-direct-to-cloud`
 
 
-
-
-
-
-
-
 Happy testing! 🥳
 
 ## Resources
