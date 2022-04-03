@@ -1,0 +1,319 @@
+/* This file is for your main application css. */
+@import "../node_modules/nprogress/nprogress.css";
+
+@tailwind base;
+
+@tailwind components;
+
+/* social Styles */
+// Layout (live)
+
+.mobile-container {
+  @apply flex flex-col items-center justify-center w-screen h-screen mx-auto text-base text-gray-900 bg-gray-200;
+}
+
+.mobile-display {
+  @apply relative flex flex-col flex-1 w-full overflow-hidden bg-white shadow max-w-md my-10;
+}
+
+.footer {
+  @apply flex border-t border-gray-200;
+}
+
+.footer-items {
+  @apply flex items-center justify-center w-1/4 py-3;
+}
+
+.footer-links {
+  @apply mx-auto py-4;
+}
+
+.home-svg {
+  @apply fill-current stroke-current stroke-0 p-px text-blue-500 w-8 h-8;
+}
+
+// Timeline
+.new-post-button {
+  @apply absolute right-0 bottom-0 mb-16 mr-4 rounded-full bg-blue-500 shadow-lg text-white p-4;
+}
+
+.compose-svg {
+  @apply w-6 h-6 p-px fill-current;
+}
+
+.header {
+  @apply flex items-center px-4 py-3 border-b;
+}
+
+.avatar {
+  @apply w-10 h-10 rounded-full;
+}
+
+.header-title {
+  @apply ml-3 text-lg font-extrabold;
+}
+
+.section-title {
+  @apply mb-6 text-lg leading-6 font-medium text-gray-900;
+}
+
+.body {
+  @apply flex-1 overflow-scroll;
+}
+
+.new-posts-notice {
+  @apply border border-b border-gray-200 p-4 py-4 cursor-pointer flex flex-1 justify-center;
+}
+
+.load-more-placeholder {
+  @apply px-4 py-4 flex flex-1 justify-center;
+}
+
+.back-svg {
+  @apply w-6 h-6 p-px text-blue-500 fill-current;
+}
+
+// Post
+
+.post {
+  @apply flex px-4 py-3 border-b border-gray-200;
+}
+
+.post-content {
+  @apply flex flex-col flex-1 min-w-0 pl-3;
+}
+
+.post-header {
+  @apply flex text-sm;
+}
+
+.post-user-info {
+  @apply truncate text-gray-500;
+}
+
+.post-user-name {
+  @apply font-bold text-gray-900;
+}
+
+.post-user-username {
+  @apply pl-1 text-gray-500;
+}
+
+.post-date-info {
+  @apply flex-shrink-0;
+}
+
+.post-date-separator {
+  @apply px-1 text-gray-500;
+}
+
+.post-date {
+  @apply text-gray-500;
+}
+
+.post-body {
+  @apply text-sm;
+}
+
+.post-actions {
+  @apply flex justify-between mt-2 text-gray-500;
+}
+
+.post-action {
+  @apply flex;
+}
+
+.post-reposted {
+  @apply text-green-500;
+}
+
+.post-liked {
+  @apply text-red-500;
+}
+
+.post-action-svg {
+  @apply w-5 h-5 p-px fill-current;
+}
+
+.post-action-count {
+  @apply text-sm p-px;
+}
+
+.post-images {
+  @apply mt-2 flex justify-between;
+}
+
+.post-image {
+  @apply rounded-md h-64 w-32 object-cover flex-1;
+}
+
+// Compose
+
+.compose-wrapper {
+  @apply px-3 mt-3 flex;
+}
+
+.compose-form {
+  @apply flex-1 ml-3;
+}
+
+.compose-fields {
+  > * + * {
+    margin-top: 0.25rem;
+  }
+}
+
+.compose-box {
+  @apply border-gray-300 border-b-2;
+}
+
+.compose-textarea {
+  @apply w-full py-3 px-3;
+}
+
+.compose-actions {
+  @apply mt-4 flex flex-row justify-between h-6 w-6 text-blue-500 fill-current;
+}
+
+.compose-btn {
+  @apply px-4 py-2 rounded-full bg-blue-500 text-white;
+}
+
+// General forms
+
+.form-fields {
+  > * + * {
+    margin-top: 1.5rem;
+  }
+}
+
+.form-field {
+  > * + * {
+    margin-top: 0.25rem;
+  }
+}
+
+.form-wrapper {
+  @apply max-w-md mx-auto pt-10 pb-12 px-4 flex-1 overflow-scroll;
+}
+
+.form-label {
+  @apply block text-sm font-medium leading-5 text-gray-700;
+}
+
+.field-input {
+ @apply block w-full transition duration-150 ease-in-out rounded-md shadow-sm;
+}
+
+.form-action {
+  @apply block w-full rounded-md shadow-md;
+}
+
+.btn {
+  @apply flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-blue-600;
+}
+
+.btn-full {
+  @apply w-full;
+}
+
+.bth:hover {
+  @apply bg-blue-500;
+}
+
+.btn:focus {
+  @apply outline-none border-blue-700 shadow-outline-blue;
+}
+
+.btn:active {
+  @apply bg-blue-700;
+}
+
+// show post
+
+// Show
+
+.show-post {
+  @apply flex flex-col px-6 pt-6 border-b border-gray-200;
+
+  > * + * {
+    margin-top: 1.25rem;
+  }
+}
+
+.show-header {
+  @apply flex items-center;
+}
+
+.show-user-info {
+  @apply ml-3 flex flex-col leading-tight;
+}
+
+.show-user-name {
+  @apply font-bold;
+}
+
+.show-user-username {
+  @apply text-gray-500;
+}
+
+.show-body {
+  @apply text-lg mb-3;
+}
+
+.show-actions {
+  @apply mx-6 py-2 border-t border-gray-200 flex justify-between text-gray-500;
+}
+
+@tailwind utilities;
+
+/* LiveView specific classes for your customizations */
+.phx-no-feedback.invalid-feedback,
+.phx-no-feedback .invalid-feedback {
+  display: none;
+}
+
+.phx-click-loading {
+  opacity: 0.5;
+  transition: opacity 1s ease-out;
+}
+
+.phx-disconnected{
+  cursor: wait;
+}
+.phx-disconnected *{
+  pointer-events: none;
+}
+
+/* Alerts and form errors */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alert p {
+  margin-bottom: 0;
+}
+.alert:empty {
+  display: none;
+}
+.invalid-feedback {
+  color: #a94442;
+  display: block;
+}

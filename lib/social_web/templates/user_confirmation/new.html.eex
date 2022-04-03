@@ -1,0 +1,25 @@
+<div class="header">
+  <h1 class="header-title">Resend confirmation instructions</h1>
+</div>
+
+<div class="form-wrapper">
+  <%= form_for :user, Routes.user_confirmation_path(@conn, :create), fn f -> %>
+    <div class="form-fields">
+      <div class="form-field">
+        <%= label f, :email, class: "form-label" %>
+        <%= email_input f, :email, required: true, class: "form-input field-label" %>
+      </div>
+
+      <div class="form-actions">
+        <%= submit "Resend confirmation instructions", class: "btn btn-full" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<footer class="footer">
+  <p class="footer-links">
+    <%= link "Register", to: Routes.user_registration_path(@conn, :new) %> |
+    <%= link "Log in", to: Routes.user_session_path(@conn, :new) %>
+  </p>
+</footer>

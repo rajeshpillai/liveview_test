@@ -1,0 +1,41 @@
+<header class="header">
+  <%= link to: Routes.user_settings_path(@socket, :edit), id: "user-avatar" do %>
+    <img class="avatar" src="<%= @current_user.avatar_url %>">
+  <% end %>
+  <h1 class="header-title">Home</h1>
+</header>
+
+<div class="body">
+  <%= if @new_posts_count > 0 do %>
+    <div phx-click="show-new-posts" id="new-posts-notice" class="new-posts-notice">
+      <%= ngettext("Show 1 post", "Show %{count} posts", @new_posts_count) %>
+    </div>
+  <% end %>
+  <%= for post_id <- @post_ids do %>
+    <div data-role="post">
+      <%= if @current_post_id && @current_post_id == post_id do %>
+        <%= live_component @socket, ShowPostComponent, id: post_id, current_user: @current_user %>
+      <% else %>
+        <%= live_component @socket, PostComponent, id: post_id, current_user: @current_user %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="load-more-placeholder" id="load-more" phx-hook="InfiniteScroll">
+    Loading ...
+  </div>
+</div>
+
+<div class="new-post-button">
+  <%= live_redirect to: Routes.compose_path(@socket, :new), id: "compose-button" do %>
+    <%= SVGHelpers.compose_svg() %>
+  <% end %>
+</div>
+
+<footer class="footer">
+  <div class="footer-items">
+    <%= live_redirect to: Routes.timeline_path(@socket, :index) do %>
+      <%= SVGHelpers.home_svg() %>
+    <% end %>
+  </div>
+</footer>
