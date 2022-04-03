@@ -13,8 +13,10 @@
 alias Social.{Accounts, Repo, Timeline.Post}
 alias Social.Accounts.User
 alias Social.Timeline.Like
+alias Social.Timeline.Comment
 
 Repo.delete_all(Like)
+Repo.delete_all(Comment)
 Repo.delete_all(Post)
 Repo.delete_all(User)
 
@@ -81,7 +83,22 @@ posts = %{
 end)
 |> Enum.each(fn user ->
   Enum.each(posts[user.name], fn body ->
-    %Post{body: body, user_id: user.id}
+    %Post{
+      body: body, user_id: user.id,
+      comments: [
+        %Comment{
+          content: "Sample data 1",
+          name: "Sample name 1",
+          user_id: user.id,
+        },
+        %Comment{
+          content: "Sample data 2",
+          name: "Sample name 2",
+          user_id: user.id,
+        },
+      ]
+    }
     |> Repo.insert!()
   end)
+
 end)
