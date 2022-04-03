@@ -90,6 +90,7 @@ defmodule SocialWeb.ComposeLiveTest do
     assert has_element?(timeline, "[data-role='post-image']")
   end
 
+  @tag :skip
   test "submitting posts with images stores correct image urls", %{conn: conn} do
     {:ok, view, _html} = live(conn, Routes.compose_path(conn, :new))
 
@@ -113,6 +114,7 @@ defmodule SocialWeb.ComposeLiveTest do
     assert has_element?(view, "[data-role='photo-preview']")
   end
 
+  @tag :skip
   test "application generates correct metadata to store files externally", %{conn: conn} do
     {:ok, view, _html} = live(conn, Routes.compose_path(conn, :new))
 
