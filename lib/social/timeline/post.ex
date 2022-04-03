@@ -9,6 +9,8 @@ defmodule Social.Timeline.Post do
     field :photo_urls, {:array, :string}, default: []
 
     has_many :likes, Social.Timeline.Like
+    has_many :comments, Social.Timeline.Comment
+
     belongs_to :user, Social.Accounts.User
 
     timestamps()
