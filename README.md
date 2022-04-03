@@ -30,11 +30,11 @@ Now you can visit Social at [`localhost:4000`](http://localhost:4000).
 - `13-testing-liking-posts`
 - `14-testing-stateful-components`
 - `15-testing-broadcasting-likes`
-- `15-testing-javascript-hooks-server-side-only`
-- `16-complex-assertions-with-floki`
-- `17-testing-uploads`
-- `18-testing-uploads-direct-to-server`
-- `19-testing-uploads-direct-to-cloud`
+- `16-testing-javascript-hooks-server-side-only`
+- `17-complex-assertions-with-floki`
+- `18-testing-uploads`
+- `19-testing-uploads-direct-to-server`
+- `20-testing-uploads-direct-to-cloud`
 
 
 
