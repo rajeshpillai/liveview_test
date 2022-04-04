@@ -10,6 +10,7 @@ Social is a twitter(ish) clone to learn to test LiveView app
 * Create and migrate your database with `mix ecto.setup`
 * Install Node.js dependencies with `npm install` inside the `assets` directory
 * Run `mix test` to make sure all tests pass.
+* Run test in watch mode `mix test.watch`
 * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit Social at [`localhost:4000`](http://localhost:4000).

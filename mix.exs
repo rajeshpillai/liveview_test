@@ -52,6 +52,7 @@ defmodule Social.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:hackney, "~> 1.9"},
       {:ex_machina, "~> 2.4", only: :test},
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test]}
     ]
   end
 
