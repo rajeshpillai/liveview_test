@@ -6,16 +6,17 @@ defmodule Social.Factory do
 
   def post_factory do
     %Post{
-      body: sequence("This is a watweet"),
+      body: sequence("This is social"),
       user: build(:user),
-      likes: []
+      likes: [],
+      comments: []
     }
   end
 
   def user_factory(attrs) do
     default = %{
-      name: "Gandalf",
-      username: sequence("gandalf"),
+      name: "apple",
+      username: sequence("apple"),
       email: sequence(:email, &"user#{&1}@example.com"),
       password: "hello world!"
     }
