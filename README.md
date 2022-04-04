@@ -14,6 +14,9 @@ Social is a twitter(ish) clone to learn to test LiveView app
 
 Now you can visit Social at [`localhost:4000`](http://localhost:4000).
 
+## Todos
+  - Comments features and unit tests
+
 ## The following features are covered
 - `1-testing-rendering`
 - `2-scoping-assertions`
