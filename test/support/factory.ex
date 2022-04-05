@@ -3,6 +3,7 @@ defmodule Social.Factory do
 
   alias Social.Accounts.User
   alias Social.Timeline.Post
+  alias Social.Timeline.Comment
 
   def post_factory do
     %Post{
@@ -10,6 +11,22 @@ defmodule Social.Factory do
       user: build(:user),
       likes: [],
       comments: []
+    }
+  end
+
+  def post_with_comments_factory do
+    %Post{
+      body: sequence("This is social post with comment"),
+      user: build(:user),
+      likes: [],
+      comments: build_list(1, :comment)
+    }
+  end
+
+  def comment_factory do
+    %Comment{
+      content: sequence("This is a comment"),
+      name: sequence("name"),
     }
   end
 

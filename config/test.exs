@@ -24,7 +24,7 @@ config :social, SocialWeb.Endpoint,
 config :social, :avatar_client, Social.Avatar.TestClient
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :debug
 
 config :social, :cloudinary,
   api_key: 123,
