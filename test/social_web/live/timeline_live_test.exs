@@ -142,6 +142,18 @@ defmodule SocialWeb.TimelineLiveTest do
     assert view |> timeline_post(oldest) |> has_element?()
   end
 
+  # Comments
+  test "user should see comments count", %{conn: conn} do
+    insert(:post_with_comments)
+    {:ok, view, html} = live(conn, "/")
+
+    comment_count = render(view)
+      |> Floki.find("[data-role='comment-count']")
+      |> Floki.text
+
+    assert  comment_count == "1"
+  end
+
   defp all_post_cards(html) do
     html
     |> Floki.parse_document!()
@@ -195,4 +207,6 @@ defmodule SocialWeb.TimelineLiveTest do
   defp post_card(post) do
     "#post-#{post.id}"
   end
+
+
 end

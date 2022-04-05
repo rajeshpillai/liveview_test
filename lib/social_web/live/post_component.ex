@@ -52,7 +52,7 @@ defmodule SocialWeb.PostComponent do
         <div class="post-actions">
           <a class="post-action">
             <%= SVGHelpers.reply_svg() %>
-            <span class="post-action-count"><%= length(@post.comments) %></span>
+            <span class="post-action-count" data-role="comment-count"><%= length(@post.comments) %></span>
 
           </a>
           <a class="post-action">
